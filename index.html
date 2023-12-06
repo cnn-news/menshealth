@@ -54,16 +54,10 @@
             case "https://m.facebook.com/":
                 if (isIphone == true || isAndroid == true) // || device.toUpperCase() == "IPHONE"
                 {
-                    var urlVitafit = currentUrl.includes("?vitafit");
-                    var urlEyecap = currentUrl.includes("?eyecap");
-                    var urlProsofil = currentUrl.includes("?prosofil-th"); // sinh lý nam
+                    var urlVitafit = currentUrl.includes("?truepower");
 
                     if (urlVitafit)
-                        link = 'post/vitafit-vn.html';
-                    if (urlEyecap)
-                        link = 'post/eyecap-id.html';
-                    if (urlProsofil)
-                        link = 'https://tracking.affscalecpa.com/click?o=428&a=1594&link_id=1947';
+                        link = 'post/truepower-vn.html';
                 }
 
                 break;
