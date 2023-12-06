@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Renew Insuline2</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/comment.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#form").submit(function (event) {
+                event.preventDefault();
+
+                var name = $("input[name='txtName']").val();
+                var phone = $("input[name='txtPhone']").val();
+
+                var postData = {
+                    firstname: name,
+                    phone: phone
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=299",
+                    data: postData,
+                    success: function (response) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    },
+                    error: function (xhr, status, error) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    }
+                });
+            });
+
+            $("#btnSendMsg").click(function () {
+                SendComment();
+            });
+        });
+
+        function SendComment() {
+            $("#txtComment").val("");
+            alert('Komentar berhasil! Kami akan meninjau sebelum menampilkannya. Terima kasih');
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '702401235066917');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=702401235066917&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center bg-success">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <i class="bi bi-list toggle-sidebar-btn text-white"></i>
+
+        </div><!-- End Logo -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center" style="margin-right: 20px;">
+                <li class="nav-item" style="margin-right: 10px;">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <h1 class="text-white fw-light text-uppercase" style="font-size: 2.3em; margin-top: 10px;">medis</h1>
+                    </a>
+
+                </li><!-- End Profile Nav -->
+                <li class="nav-item">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/logo.png" alt="Profile" class="rounded">
+                    </a>
+
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav text-uppercase" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">HOME</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">CURRENT ISSUE</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">WORLD</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">BUSINESS & INVESTMENT</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">EXPLORE INDONESIA</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">ARTICLE</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">PHOTO</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">PRESS RELEASE</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">INFOGRAPHICS</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">BAHASA</span>
+                </a>
+            </li>
+        </ul>
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+        <p class="text-center">
+            <h1><span class="text-danger">Bagi Yang selalu Menganggap Remeh Diabetes.</span> Penyakit Diabetes merupakan Penyakit Mematikan Di Dunia</h1>
+        </p>
+        <p>
+            <a href="#buynow">
+                <img src="assets/img/tieuduong-id/WhatsApp-Image-2023-08-22-at-22.19.56.jpeg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+        </p>
+
+        <p>
+            <h3>“Diabetes Anda Akan Teratasi Jika Anda Meluangkan <span class="text-danger">Waktu Anda Selama 3-5 Menit Untuk Membaca Website Ini”</span></h3>
+        </p>
+
+        <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show text-center" role="alert">
+            <h2>Diabet <span style="color: yellow">Beresiko Komplikasi Jika Tidak Segera Diatasi</span></h2>
+        </div>
+
+        <p>
+            <ul class="fw-bold">
+                <li>Serangan Jantung</li>
+                <li>Stroke</li>
+                <li>Gagal Ginjal Kronis</li>
+                <li>Gangguan Penglihatan Bersiko Buta</li>
+                <li>Luka dan Infeksi Yang Sulit Sembuh Berpotensi Amputasi</li>
+            </ul>
+        </p>
+
+        <p>
+            <a href="#buynow">
+                <img src="assets/img/tieuduong-id/IMG-20230729-WA0022.jpg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+        </p>
+
+        <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show text-center" role="alert">
+            <h2><span style="color: yellow">LEBIH DARI 10 JUTA ORANG MENINGGAL DI INDONESIA SETIAP HARINYA </span> <b>KARENA DIABETES</b></h2>
+        </div>
+
+        <p>
+            <a href="#buynow">
+                <img src="assets/img/tieuduong-id/WhatsApp-Image-2023-07-20-at-22.17.30_11zon.webp" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+        </p>
+
+        <div class="alert border-success alert-dismissible fade show" role="alert">
+            <h3 class="text-center text-danger"><b>Nah untuk anda yang punya masalah seperti diatas</b></h3>
+            <h3 class="text-center"><b>Saya sarankan luangkan waktunya untuk membaca informasi penting ini sampai habis tentang salah satu penyakit yang paling mematikan di dunia</b></h3>
+        </div>
+
+        <div class="alert border-success alert-dismissible fade show fw-bold" role="alert">
+            <h3 class="text-center text-success"><b>Lalu bagaimana jumlah penderita yang ada di negara kita ini ?</b></h3>
+        </div>
+
+        <p class="text-center fw-bold">Indonesia menjadi negara dengan jumlah penderita diabetes tipe satu paling banyak di Asia Tenggara. Berdasarkan laporan International Diabetes Federation (IDF), jumlah penderita diabetes tipe ini di dalam negeri sebanyak 41.813 orang pada 2022.. Hal ini bisa terjadi bila masyarakat Indonesia masih kurang sadar akan penyakit ini dan kerap menyepelekannya.</p>
+
+        <p class="text-center fw-bold" style="color: blue">
+            dr. Leny Puspitasari, Sp.PD – KEMD <br />
+            Dokter spesialis penyakit dalam <br />
+            Siloam Hospitals Lippo Village
+        </p>
+
+        <div class="alert alert-dark bg-dark text-light border-0 alert-dismissible fade show text-center" role="alert">
+            <h4><b>JADI JIKA SAMPAI HARI INI ANDA MASIH SAJA MENYEPELEKAN PENYAKIT INI, TANPA DI SADARI ANDA SEDANG MENUNGGU GILIRAN <span style="color: yellow">MENAMBAH JUMLAH KEMATIAN DI INDONESIA !!!</span></b></h4>
+        </div>
+
+        <a href="#buynow">
+            <img src="assets/img/tieuduong-id/26221786579-kasus-covid-19-di-argentina-meningkat-sejumlah-rumah-sakit-penuh-apnatacha-pisarenko-4.jpeg" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+        </a>
+
+        <a href="#buynow">
+            <img src="assets/img/tieuduong-id/ins-1.jpg" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+        </a>
+
+        <div class="alert border-success alert-dismissible fade show text-center" role="alert">
+            <p><h1 class="text-success"><b>BELUM CUKUPKAH PERINGATAN TENTANG DIABETES YANG BISA SAJA MERENGGUT JIWA ANDA?</b></h1></p>
+            <p><h1><b>UNTUK ITU KAMI PUNYA  Ramuan Herbal <span class="text-success">MANJUR</span> untuk mengatasi DIABETES</b></h1></p>
+            <p><h1><b><span class="text-success">KHASIATNYA</span> sudah bisa terasa cuma dalam <span class="text-success">1-2 jam Saja</span></b></h1></p>
+        </div>
+
+        <a href="#buynow">
+            <img src="assets/img/tieuduong-id/Diaclose-ID-feedback-06.jpg" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+        </a>
+
+        <p><h3><b>Kesaksian Pa Ali umur 35Tahun</b></h3></p>
+
+        <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show text-center" role="alert">
+            <span style="color: yellow">
+                Seorang Security, saya mengidap diabetes hampir 10 tahun, Sebelumnya Guladarah saya selalu tinggi bahkan pernah mencapai 499,Setelah Konsumsi Insulmax”s Alhamdulillah Meski makan dan minum manis sekalipun Guladarah saya tetap stabil,
+                semua keluahan seperti sering lemas, ngantuk dan haus tidak terasa lagi Penglihatan juga sudah tidak buram,
+            </span>
+        </div>
+
+        <div class="alert border-success alert-dismissible fade show text-center" role="alert">
+            <h3><b>Gejala seperti KESEMUTAN, PENGLIHATAN KABUR, LUKA SULIT SEMBUH, SERING BUANG AIR KECIL <span class="text-danger">babat TUNTAS</span></b></h3>
+        </div>
+
+        <div class="alert border-success alert-dismissible fade show text-center" role="alert">
+            <B>Kapsul</B> <a href="#buynow" class="text-danger">DIACLOSE</a> ini sudah teruji secara klinis dengan diformulasikan oleh Pakar Herbal Indonesia dengan lebih dari 20 tahun pengalaman di bidangnya. <b>Kapsul</b> <a href="#buynow" class="text-danger">DIACLOSE</a> menurunkan Kadar Gula <b>dalam waktu 1-2 Jam!</b> Hasil yang didapat bisa berbeda-beda tergantung dari kondisi fisik pasien, ada yang membutuhkan waktu 3-24 jam, dan banyak yang merasakan Tubuhnya menjadi lebih segar dan enakan karena Kadar Gula Darahnya turun!
+        </div>
+
+        <div class="alert border-success alert-dismissible fade show text-center" role="alert">
+            <p>Begitu Anda memulai pengobatan insulin, SEMUANYA akan berubah. Berkat zat alami yang dilepaskan secara bertahap, Anda akan meningkatkan sekresi insulin, meningkatkan fungsi pankreas, dan yang terpenting, menjaga glukosa pada tingkat yang diinginkan. Terakhir, Anda akan dengan bangga menolak minuman dengan pemanis buatan, baik di toko atau saat berjalan-jalan sore di kota. Semua berkat fakta bahwa saya dapat mengembangkan formula yang mampu menghancurkan berbagai penyebab diabetes dan mengurangi keinginan akan makanan manis.</p>
+
+            <p>
+                <b>Kapsul</b> <a href="#buynow" class="text-danger">DIACLOSE</a> mempunyai peran sebagai
+                antidiabetes yaitu: sebagai pemanis, meningkatkan sekresi insulin dan meningkatkan sensitivitas reseptor insulin,
+            </p>
+
+            <p>
+                <b>Kapsul</b> <a href="#buynow" class="text-danger">DIACLOSE</a> <br />
+                Termasuk  dalam kombinasi dengan konten “insulin alami” (senyawa phyto yang mensimulasikan aksi metabolisme insulin ketika dicerna), membantu kemampuan C. igneus untuk menurunkan kadar gula darah pada penderita diabetes.
+                Jurnal yang dipublikasikan oleh US National Library of Medicine menyatakan bahwa konsumsi tanaman insulin ini diyakini dapat menurunkan kadar glukosa darah, dan penderita diabetes yang mengkonsumsi daun tanaman ini juga mengalami penurunan kadar glukosa darah
+            </p>
+        </div>
+
+        <div class="alert alert-dark bg-dark text-light border-0 alert-dismissible fade show text-center" role="alert">
+            <h1><b>Produk alami dan Legal Bersertifikat BPOM.TR.163395531 Kapsul Herbal Insulin 100% terbuat dari herbal alami.</b></h1>
+        </div>
+
+        <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show text-center" role="alert">
+            <h1 style="color: yellow">FORMULASI AMPUH TERBUKTI SEMBUHKAN DIABETES</h1>
+        </div>
+
+        <div class="alert border-success alert-dismissible fade show text-center" role="alert">
+            <h1><b class="text-success">Berikut Testimoni Pelanggan Kami</b></h1>
+        </div>
+
+        <p>
+            <img src="assets/img/tieuduong-id/Feedback-1.jpeg" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+            <img src="assets/img/tieuduong-id/feedback-2.png" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+            <img src="assets/img/tieuduong-id/feedback-3.png" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+            <img src="assets/img/tieuduong-id/feedback-4.png" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+        </p>
+
+        <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show text-center" role="alert">
+            <h1>
+                <b style="color: yellow">
+                    Kapsul Insulmax Telah Mendapatkan Banyak Penghargaan Dan Pengakuan
+                </b>
+            </h1>
+        </div>
+
+        <p>
+            <img src="assets/img/tieuduong-id/WhatsApp-Image-2023-08-24-at-23.08.21.jpeg" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+        </p>
+
+        <div class="alert border-success alert-dismissible fade show text-center" role="alert">
+            <h1>
+                <b class="text-danger">
+                    Turunkan Gula Darah Anda Sekarang
+                    Seringkali orang menunda-nunda melakukan sesuatu. Sampai akhirnya semua sudah terlambat. Jangan sepelekan masalah gula darah anda. Jangan sampai KOMPLIKASI mendahului anda.
+                </b>
+            </h1>
+        </div>
+
+        <br />
+        <div class="text-center"><h1 class="text-success"><b>Khusus untuk hari ini kami berikan</b></h1></div>
+        <br />
+
+        <p>
+            <img src="assets/img/tieuduong-id/23.webp" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+        </p>
+
+        <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show text-center fw-bold" role="alert">
+            <p>Sebuah pesan untuk kita semua apabila penyakit sudah terlanjur parah. Uang sebesar apapun tak akan ada artinya, ayo jangan pelit dengan kesehatan anda !!</p>
+
+            <p>
+                <span style="color: yellow">
+                    Turunkan Gula Darah Anda Sekarang
+                    Seringkali orang menunda-nunda melakukan sesuatu. Sampai akhirnya semua sudah terlambat. Jangan sepelekan masalah gula darah anda. Jangan sampai
+                </span> KOMPLIKASI mendahului anda.
+            </p>
+        </div>
+
+        <p>
+            <img src="assets/img/tieuduong-id/warga-dilarang-ziarah-ke-makam-210505233532-768x514.jpg" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+        </p>
+
+        <p class="text-center"><b>Note : Iklan ini tidak muncul untuk kedua kali, jadi yuk isi data diri anda. Jaga dan rawat tubuh anda jangan sampai menyesal dikemudian hari</b></p>
+
+        <p>
+            <img src="assets/img/tieuduong-id/Garansi-2-1-1-1-1.png" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+        </p>
+
+        <br />
+        <div class="text-center"><h1 class="text-success"><b>Khusus untuk hari ini kami berikan</b></h1></div> <br />
+
+        <div class="card mb-3" id="buynow">
+            <div class="card-body">
+                <div class="pt-4 pb-2">
+                    <img src="assets/img/tieuduong-id/Diaclose-ID-Decor-02.png" class="rounded" alt="" style="width: 100%; margin-bottom: 10px;">
+                    <h1 class="text-center fw-bold">PROMO TERBATAS</h1> <br />
+                    <h2 class=" text-center fw-light text-decoration-line-through" style="font-size: 2em">RP 980 000</h2>
+
+                    <div class="text-center"><img src="assets/img/tieuduong-id/tanda-panah-animasi-29-1.webp" alt="" /></div>
+                    
+                    <h1 class="text-center fw-bold text-danger" style="margin: 20px 0; font-size: 3em">Rp 490.000</h1>
+                </div>
+
+                <div class="text-center" style="font-size: 3em; margin-bottom: 20px">
+                    <span class="badge bg-danger"><i class="bi bi-clock-fill"></i> <span id="timer">30 : 00</span></span>
+                </div>
+
+                <form id="form" class="row g-3 needs-validation" action="#" method="post">
+                    <div class="col-12">
+                        <label for="yourName" class="form-label">Nama<i class="bi bi-person"></i></label>
+                        <input type="text" id="txtName" name="txtName" class="form-control" required>
+                        <div class="invalid-feedback"><i style="font-size: 0.9em">Silahkan masukan nama anda</i></div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="yourPhone" class="form-label">Telepon <i class="bi bi-telephone"></i></label>
+                        <input type="text" id="txtPhone" name="txtPhone" class="form-control" required>
+                        <div class="invalid-feedback"><i style="font-size: 0.9em">Silakan masukkan nomor telepon</i></div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-danger w-100" type="submit" name="submit"><i class="bi bi-cart-plus-fill"></i> PESAN SEKARANG</button>
+                    </div>
+                </form>
+                <div class="text-center" style="margin-top: 20px;">Produk yang tersisa: <span class="badge bg-danger">12</span></div>
+            </div>
+            <P class="text-center">Jangan khawatir, kurir mengganti masker <br /> dan sarung tangan mereka secara teratur. <br /> Pengiriman dan pembayaran tanpa kontak.</P>
+        </div>
+
+
+
+        <!-- Comments -->
+        <div class="container" style="--bs-gutter-x: 0rem !important">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-7">
+                    <div class="card">
+
+                        <div class="p-3">
+
+                            <h5 class="text-success fw-light text-uppercase"><i class="bi bi-chat-dots-fill"></i> Komentar</h5>
+
+                        </div>
+                        <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
+                            <img src="assets/img/no-avatar.jpg" width="50" class="rounded-circle mr-2" style="margin-right:10px">
+                            <form action=""></form>
+                            <input type="text" id="txtComment" class="form-control" placeholder="Komentar" style="margin-right:5px; height: 43px">
+                            <button type="submit" class="btn btn-secondary" id="btnSendMsg"><i class="ri-send-plane-fill"></i></button>
+                        </div>
+                        <div class="mt-2">
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Ananda Pribadi</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Saya sudah memesan <a href="#buynow">Diaclose</a> hari ini, makasih atas pengiriman cepatnya!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">204</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 5h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Hana Aprilia</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Tadinya saya menderita diabetes... Langsung lenyap dalam 50 hari! Terima kasih!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">98</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 5h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Yuni pratami</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Benar sekali! Obat yang ampuh sekali untuk diabetes! Kadar gula darah saya sekarang stabil di angka 4,8 mmol.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">24</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Andri Setiawan</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Agus Putranto, terima kasih! Saya sudah mencobanya, mudah sekali. Mari kita lihat apa yang akan terjadi dalam waktu seminggu. Terlalu cepat berbicara tentang pemulihan penuh, tapi saya memang merasa lebih sehat, saya akan menulis ulasan lainnya nanti. Tapi yang penting sekarang kadar gula darah saya tidak naik turun lagi. Jadi sepertinya hasilnya pasti akan bagus!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">22</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 8h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Wahyu Hermansyah</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Tolong! Saya sudah muak dengan kadar gula darah yang naik turun. Rasa tidak nyaman dan sakitnya sangat menyiksa saya. Saya tak tahu lagi harus berbuat apa. Saya sudah minum berbagai obat secara rutin, tapi semua tidak ada yang ampuh :(
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">2</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 10h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Andita Fitriani</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Gimana cara mesennya?
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">2</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 10h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Sinta Yuniarti</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Aku pesen produk ini buat adikku dua bulan lalu, sebelum ada program ini. Sebelum itu, dia sudah lama sekali menderita diabetes. Adikku bersyukur sekali aku mau mengambil risiko dan memesan obat ini, karena berkat obat ini dia berhasil sembuh.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">18</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 24h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Reza Siddharta</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Apa hasilnya benar-benar bagus? Mungkin saya juga harus memesannya.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">1</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 48h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Firman Kurniawan</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Saya juga pernah dengar tentang obat ini. Kenalan saya pernah pake. Dia menderita masalah kadar gula darah selama 2 tahun dan akhirnya mencoba mengobatinya sendiri. Saya sendiri sudah memesannya, nanti kita lihat hasilnya.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">10</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 24h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Galih Darmawan</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Sepertinya bukan saya satu-satunya yang memiliki masalah ini, tapi untungnya saya menemukan <a href="#buynow">Diaclose</a> sebulan lalu, dengan produk ini saya berhasil menghilangkan diabetes! Puluhan obat lain tidak bisa memberikan efek seperti ini.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">5</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 24h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Ganjar Gandara</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Ini beneran ampuh? Obat-obatan dan dokter yang saya kunjungi tak ada yang berguna, saya sudah takut sekali karena penyakit ini
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">5</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 52h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright fw-light" style="margin-left: 10px; margin-right: 10px;">
+            &copy; Copyright. All rights reserved.
+        </div>
+    </footer><!-- End Footer -->
+
+    <script>
+        // Countdown timer
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes,
+                seconds;
+
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + " : " + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            //var duration = 10 * 60; // 10 minutes in seconds
+            var duration = 30 * 60; // 30 minutes in seconds
+            var display = document.getElementById("timer");
+            startTimer(duration, display);
+        };
+
+    </script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
